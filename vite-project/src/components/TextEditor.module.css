@@ -1,0 +1,15 @@
+/* src/components/TextEditor.module.css */
+.editorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .textArea {
+    width: 80%;
+    height: 200px;
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 10px;
+  }
+  

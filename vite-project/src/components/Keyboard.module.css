@@ -1,0 +1,27 @@
+/* src/components/Keyboard.module.css */
+.keyboardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .keyButton {
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .languageButton {
+    margin: 5px;
+    padding: 0px 4px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #ddd;
+  }
+  
+  .languageImg{
+    height: 40px;
+    padding: 0px;
+  }
