@@ -13,3 +13,10 @@
     padding: 10px;
   }
   
+  .increaseButton {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ddd;
+  }

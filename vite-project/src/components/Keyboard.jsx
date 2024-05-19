@@ -23,7 +23,6 @@ const Keyboard = ({ onKeyPress }) => {
       {languages[currentLanguage].map((key, index) => (
         <button key={index} className={styles.keyButton} onClick={() => onKeyPress(key)}>
             {key === ' ' ? (currentLanguage === 'he' ? 'רווח' : 'Space') : key}
-
         </button>
       ))}
     </div>

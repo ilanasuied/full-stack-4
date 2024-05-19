@@ -4,7 +4,7 @@
 }
 
 .undoImage{
-    height: 25px;
+    height: 30px;
 }
 
 .buttons{
@@ -13,5 +13,13 @@
 }
 
 .removeImage{
-    height: 25px;
+    height: 30px;
+}
+
+.decreaseImage{
+    height: 30px;
+}
+
+.increaseImage{
+    height: 30px;
 }
