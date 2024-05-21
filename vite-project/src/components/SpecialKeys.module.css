@@ -1,25 +1,17 @@
 .specialKeysContainer{
     display: flex;
     justify-content: space-between;
-}
-
-.undoImage{
-    height: 30px;
+    background-color: white;
+    padding: 0%;
+    margin: 50px;
 }
 
 .buttons{
     background-color: white;
-    margin: 20px;
+    margin: 0px;
+    border-radius: 0px;
 }
 
-.removeImage{
-    height: 30px;
-}
-
-.decreaseImage{
-    height: 30px;
-}
-
-.increaseImage{
+.buttonsImage{
     height: 30px;
 }

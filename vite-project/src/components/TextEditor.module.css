@@ -11,6 +11,9 @@
     margin-top: 20px;
     font-size: 18px;
     padding: 10px;
+    background-color: black;
+    border: black;
+    border-radius: 10px;
   }
   
   .increaseButton {
@@ -18,5 +21,4 @@
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #ddd;
   }
