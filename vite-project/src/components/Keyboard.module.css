@@ -1,27 +1,46 @@
 /* src/components/Keyboard.module.css */
 .keyboardContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .keyButton {
-    margin: 5px;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .languageButton {
-    margin: 5px;
-    padding: 0px 4px;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: white;
-  }
-  
-  .languageImg{
-    height: 40px;
-    padding: 0px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+}
+
+.keyButton {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #f8f8f8; /* Light gray button background */
+  color: #333; /* Default button text color */
+  border: 1px solid #ddd; /* Light gray button border */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.keyButton:hover {
+  background-color: #ddd; /* Darker gray background on hover */
+}
+
+.languageButton {
+  margin: 5px;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #fff; /* White background for language button */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.languageButton:hover {
+  background-color: #f8f8f8; /* Light gray background on hover */
+}
+
+.languageImg {
+  height: 40px;
+  padding: 0;
+}

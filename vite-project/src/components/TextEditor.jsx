@@ -63,6 +63,14 @@ const TextEditor = () => {
 
   return (
     <div className={styles.editorContainer}>
+       <SpecialKeys  onRemovePress={handleRemovePress} 
+                    onRemoveAllPress={handleRemoveAllPress} 
+                    onIncreaseFontSize={increaseFontSize} 
+                    onDecreaseFontSize={decreaseFontSize} 
+                    onUpperCase={toUpperCase} 
+                    onLowerCase={toLowerCase}
+                    onBoldPress={toggleBold}/>
+         <ColorPicker onColorChoosen={colorChange}/>
       <textarea 
         className={styles.textArea} 
         value={text} 
@@ -73,15 +81,7 @@ const TextEditor = () => {
                   fontWeight: `${isBold}`
               }}
       />
-      <SpecialKeys  onRemovePress={handleRemovePress} 
-                    onRemoveAllPress={handleRemoveAllPress} 
-                    onIncreaseFontSize={increaseFontSize} 
-                    onDecreaseFontSize={decreaseFontSize} 
-                    onUpperCase={toUpperCase} 
-                    onLowerCase={toLowerCase}
-                    onBoldPress={toggleBold}/>
       <FontFamilyPicker onFontPress={handleFontChange}/>
-      <ColorPicker onColorChoosen={colorChange}/>
       <Keyboard onKeyPress={handleKeyPress} />
     </div>
   );

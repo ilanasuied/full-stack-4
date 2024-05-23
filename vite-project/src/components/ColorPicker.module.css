@@ -1,5 +1,23 @@
-.colorButton{
-    width: 10px;
-    height: 40px;
-    border-radius: 0%;
+/* ColorPicker.module.css */
+.colorPickerContainer {
+    position: relative; /* Make sure this container is the reference point for the absolute positioning */
+}
+
+.colorPickerWrapper {
+    display: inline;
+    position: relative;
+}
+
+.toggleColorPickerButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top:10px;
+}
+
+.sketchPickerContainer {
+    position: absolute;
+    top: 50px; /* Adjust this value as needed to ensure it opens above the button */
+    left: 0;
+    z-index: 1000; /* Ensure it appears above other elements */
 }
