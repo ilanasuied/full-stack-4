@@ -1,8 +1,12 @@
 /* src/components/Keyboard.module.css */
 .keyboardContainer {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  background-color: #eaeaea;
+  border-radius: 10px;
+  margin: 50px;
 }
 
 .row {
