@@ -30,6 +30,7 @@
   padding: 0;
   font-size: 20px;
   cursor: pointer;
+  display: inline;
   background-color: #fff; /* White background for language button */
   border: 1px solid #ddd; /* Light gray border */
   border-radius: 5px;
@@ -43,4 +44,25 @@
 .languageImg {
   height: 40px;
   padding: 0;
+}
+.spaceButton {
+  flex-grow: 3; /* Make the space button grow to be 3 times wider than the other buttons */
+  padding: 10px 60px; /* Increase padding for the space button */
+}
+.specialKeysContainer{
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 0%;
+  /* margin: 50px; */
+}
+
+.buttons{
+  background-color: white;
+  margin: 0px;
+  border-radius: 0px;
+}
+
+.buttonsImage{
+  height: 30px;
 }

@@ -7,10 +7,10 @@ import FontFamilyPicker from './FontFamilyPicker.jsx'
 
 const TextEditor = () => {
   const [text, setText] = useState('');
-  const [fontSize, setFontSize] = useState(18); 
+  const [fontSize, setFontSize] = useState(18);
   const [color, setColor] = useState('white');
   const [fontFamily, setFontFamily] = useState('Arial');
-  const [isBold, setIsBold] = useState('normal'); 
+  const [isBold, setIsBold] = useState('normal');
 
 
   const handleKeyPress = (key) => {
@@ -18,7 +18,7 @@ const TextEditor = () => {
   };
 
   const handleRemovePress = () => {
-      setText(prevText => prevText.substring(0, prevText.length - 1))
+    setText(prevText => prevText.substring(0, prevText.length - 1))
   };
 
   const handleRemoveAllPress = () => {
@@ -34,11 +34,11 @@ const TextEditor = () => {
   }
 
   const increaseFontSize = () => {
-    setFontSize(prevSize => prevSize + 2 < 100 ? prevSize + 2: prevSize); 
+    setFontSize(prevSize => prevSize + 2 < 100 ? prevSize + 2 : prevSize);
   };
 
   const decreaseFontSize = () => {
-    setFontSize(prevSize => prevSize - 2 > 10 ? prevSize - 2: prevSize); 
+    setFontSize(prevSize => prevSize - 2 > 10 ? prevSize - 2 : prevSize);
   };
 
   const colorChange = (newColor) => {
@@ -50,12 +50,12 @@ const TextEditor = () => {
   };
 
   const toggleBold = (e) => {
-    setIsBold(prevIsBold => prevIsBold === 'bold' ? 'normal' : 'bold'); 
+    setIsBold(prevIsBold => prevIsBold === 'bold' ? 'normal' : 'bold');
     const imgElement = e.target.querySelector('img');
-    if(isBold === 'bold'){
+    if (isBold === 'bold') {
       e.target.style.backgroundColor = '#fff';
       imgElement.src = './src/image/bold.png';
-    }else{
+    } else {
       imgElement.src = './src/image/unbold.png';
     }
     console.log(e.target)
@@ -63,25 +63,32 @@ const TextEditor = () => {
 
   return (
     <div className={styles.editorContainer}>
-       <SpecialKeys  onRemovePress={handleRemovePress} 
-                    onRemoveAllPress={handleRemoveAllPress} 
-                    onIncreaseFontSize={increaseFontSize} 
-                    onDecreaseFontSize={decreaseFontSize} 
-                    onUpperCase={toUpperCase} 
-                    onLowerCase={toLowerCase}
-                    onBoldPress={toggleBold}/>
-         <ColorPicker onColorChoosen={colorChange}/>
-      <textarea 
-        className={styles.textArea} 
-        value={text} 
+      <div className={styles.specialKeysAndColorPicker}>
+      <ColorPicker onColorChoosen={colorChange} />
+      <FontFamilyPicker onFontPress={handleFontChange} />
+        <SpecialKeys
+          onRemovePress={handleRemovePress}
+          onRemoveAllPress={handleRemoveAllPress}
+          onIncreaseFontSize={increaseFontSize}
+          onDecreaseFontSize={decreaseFontSize}
+          onUpperCase={toUpperCase}
+          onLowerCase={toLowerCase}
+          onBoldPress={toggleBold}
+        />
+      </div>
+      
+      <textarea
+        className={styles.textArea}
+        value={text}
         readOnly
-        style={{  fontSize: `${fontSize}px` , 
-                  color: `${color}`, 
-                  fontFamily: `${fontFamily}` ,
-                  fontWeight: `${isBold}`
-              }}
+        style={{
+          fontSize: `${fontSize}px`,
+          color: `${color}`,
+          fontFamily: `${fontFamily}`,
+          fontWeight: `${isBold}`
+        }}
       />
-      <FontFamilyPicker onFontPress={handleFontChange}/>
+
       <Keyboard onKeyPress={handleKeyPress} />
     </div>
   );

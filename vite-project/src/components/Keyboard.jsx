@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import styles from './Keyboard.module.css';
 
 
-
 const Keyboard = ({ onKeyPress }) => {
   const languages = {
-    en: ['qwertyuiop', 'asdfghjkl', 'zxcvbnm', ' '],
-    he: ['פםןוטארק', 'ףךלחיעכגדש', 'ץתצמנהבסז', ' '],
+    en: ['1234567890','qwertyuiop', 'asdfghjkl', 'zxcvbnm', ' '],
+    he: ['1234567890',"/'קראטוןםפ", 'שדגכעיחלךף', 'זסבהנמצתץ?', ' '],
     emoji: [
       '😊😂😍🤔👍🙌🎉💔🔥✨🎁🎄', // Emotions
-      '❤️😎🌟😘🚀💼🍔🌈🎈💡📚🎵', // Objects
-      '📁📂🗂️📅📆🗓️📇📈📉📊📋📌' // Activities
+      '😎🌟😘🚀💼🍔🌈🎈💡📚🎵', // Objects
+      '📁📂📅📆📇📈📉📊📋📌', // Activities
+      ' '
     ],
   };
   const [currentLanguage, setCurrentLanguage] = useState('en');
@@ -28,9 +28,13 @@ const Keyboard = ({ onKeyPress }) => {
       {languages[currentLanguage].map((row, rowIndex) => (
         <div key={rowIndex} className={styles.row}>
           {[...row].map((key, keyIndex) => (
-            <button key={keyIndex} className={styles.keyButton} onClick={() => onKeyPress(key)}>
-              {key}
-            </button>
+               <button
+               key={keyIndex}
+               className={`${styles.keyButton} ${key === ' ' ? styles.spaceButton : ''}`} // Apply special class to space button
+               onClick={() => onKeyPress(key)}
+             >
+               {key === ' ' ? 'Space' : key}
+             </button>
           ))}
         </div>
       ))}

@@ -1,6 +1,7 @@
 /* ColorPicker.module.css */
 .colorPickerContainer {
-    position: relative; /* Make sure this container is the reference point for the absolute positioning */
+    position: relative; 
+    /* Make sure this container is the reference point for the absolute positioning */
 }
 
 .colorPickerWrapper {
@@ -12,12 +13,14 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    margin-top:10px;
+    margin-right:5px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
 }
 
 .sketchPickerContainer {
     position: absolute;
     top: 50px; /* Adjust this value as needed to ensure it opens above the button */
-    left: 0;
+    /* left: 0; */
     z-index: 1000; /* Ensure it appears above other elements */
 }
