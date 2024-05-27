@@ -1,12 +1,16 @@
 /* src/components/Keyboard.module.css */
+
 .keyboardContainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  background-color: #eaeaea;
-  border-radius: 10px;
-  margin: 50px;
+  background-color:  rgba(255, 255, 255, 0.76);/* Dark background for keyboard */
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 700px;
 }
 
 .row {
@@ -18,55 +22,88 @@
   padding: 10px 15px;
   font-size: 20px;
   cursor: pointer;
-  background-color: #f8f8f8; /* Light gray button background */
-  color: #333; /* Default button text color */
-  border: 1px solid #ddd; /* Light gray button border */
+  background-color:  rgb(255, 255, 255);/* Dark gray button background */
+  color: #1f0d0d; /* Light text color */
+  border: 1px solid white; /* Default border */
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: border-color 0.3s ease, transform 0.1s ease;
 }
 
+
+/* Enhance border colors on hover */
+.keyButton:hover:nth-child(1) { border-color: #ff3b3b; }
+.keyButton:hover:nth-child(2) { border-color: #ff9c3c; }
+.keyButton:hover:nth-child(3) { border-color: #ffce5c; }
+.keyButton:hover:nth-child(4) { border-color: #66cfa4; }
+.keyButton:hover:nth-child(5) { border-color: #ff3f3f; }
+.keyButton:hover:nth-child(6) { border-color: #58d0b0; }
+.keyButton:hover:nth-child(7) { border-color: #bcb7ae; }
+.keyButton:hover:nth-child(8) { border-color: #4b5b95; }
+
 .keyButton:hover {
-  background-color: #ddd; /* Darker gray background on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.keyButton:active {
+  transform: scale(1); /* Reset size on click */
+  background-color: #3e3e3e; /* Darker background on click */
 }
 
 .languageButton {
   margin: 5px;
-  padding: 0;
+  padding: 10px 15px;
   font-size: 20px;
   cursor: pointer;
-  display: inline;
-  background-color: #fff; /* White background for language button */
-  border: 1px solid #ddd; /* Light gray border */
+  background-color:  rgb(255, 255, 255); /* Dark gray background */
+  color: #f8f8f8; /* Light text color */
+ /* Red border */
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: border-color 0.3s ease, transform 0.1s ease;
 }
 
 .languageButton:hover {
-  background-color: #f8f8f8; /* Light gray background on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
+  border-color: #ff4a4a; /* Brighter red border on hover */
+}
+
+.languageButton:active {
+  transform: scale(1); /* Reset size on click */
+  background-color: #3e3e3e; /* Darker background on click */
 }
 
 .languageImg {
   height: 40px;
   padding: 0;
 }
+
 .spaceButton {
   flex-grow: 3; /* Make the space button grow to be 3 times wider than the other buttons */
   padding: 10px 60px; /* Increase padding for the space button */
+  background-color:  rgb(255, 255, 255); /* Dark gray background */
+  color: #181111; /* Light text color */
+  border: 1px solid #ffffff; /* Purple border */
+  border-radius: 5px;
+  transition: border-color 0.3s ease, transform 0.1s ease;
 }
-.specialKeysContainer{
+
+.spaceButton:hover {
+  transform: scale(1.1); /* Slightly increase size on hover */
+  border-color: #8b75b5; /* Brighter purple border on hover */
+}
+
+.specialKeysContainer {
   display: flex;
   justify-content: space-between;
   background-color: white;
-  padding: 0%;
-  /* margin: 50px; */
+  padding: 0;
 }
 
-.buttons{
+.buttons {
   background-color: white;
-  margin: 0px;
-  border-radius: 0px;
+  margin: 0;
+  border-radius: 0;
 }
 
-.buttonsImage{
+.buttonsImage {
   height: 30px;
 }

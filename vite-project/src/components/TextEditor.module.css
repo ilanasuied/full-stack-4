@@ -1,42 +1,49 @@
 /* src/components/TextEditor.module.css */
+
 .editorContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .textArea {
-    width: 80%;
-    height: 200px;
-    margin-top: 20px;
-    font-size: 18px;
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 10px;
-    color: black;
-  }
-  
-  .increaseButton {
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  .editorContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .specialKeysAndColorPicker {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px; /* Adjust as needed */
-    flex-wrap: wrap;
-    background-color: white;
-    border-radius: 10px;
-    padding-left: 20px;
-    margin-top: 10px;
-    border: 1px solid  #d4d4d4;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Adjusted margin */
+}
+
+.textArea {
+  width: 100%;
+  max-width: 890px; /* Maximum width */
+  height: 300px;
+  font-size: 18px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.541); /* Transparent black color */
+  /* border: 1px solid #d4d4d4; */
+  border-radius: 0 0 5px 5px;
+  color: white; /* Set text color to white */
+  margin: 0;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Added shadow effect */
+  border-top: none;
+  resize: none;
+}
+
+.increaseButton {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.specialKeysAndColorPicker {
+  display: flex;
+  align-items: center;
+  margin: 0; /* Adjusted margin */
+  flex-wrap: wrap;
+  background-color:  rgb(255, 255, 255); /* Dark background for buttons bar */
+  border-radius: 5px;
+  padding-left: 20px;
+  border: 1px solid  #d4d4d4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow effect */
+}
+
+.title {
+  font-size: 44px;
+  color: #ffffff;
+  font-style: italic;
+}
