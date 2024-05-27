@@ -4,6 +4,7 @@ import { SketchPicker } from 'react-color'
 
 
 const ColorPicker = ({ onColorChoosen }) => {
+
     const [showColorPicker, setShowColorPicker] = useState(false);
     const [selectedColor, setSelectedColor] = useState('');
 

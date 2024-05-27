@@ -14,6 +14,7 @@ const Keyboard = ({ onKeyPress }) => {
   };
   const [currentLanguage, setCurrentLanguage] = useState('en');
 
+  //change the language
   const handleLanguageChange = () => {
     const nextLanguage = currentLanguage === 'en' ? 'he' : currentLanguage === 'he' ? 'emoji' : 'en';
     setCurrentLanguage(nextLanguage);
