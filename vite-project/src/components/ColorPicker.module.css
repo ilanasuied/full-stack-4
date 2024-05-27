@@ -1,7 +1,6 @@
 /* ColorPicker.module.css */
 .colorPickerContainer {
     position: relative; 
-    /* Make sure this container is the reference point for the absolute positioning */
 }
 
 .colorPickerWrapper {

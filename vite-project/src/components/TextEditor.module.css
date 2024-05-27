@@ -11,9 +11,10 @@
     margin-top: 20px;
     font-size: 18px;
     padding: 10px;
-    background-color: black;
-    border: black;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 10px;
+    color: black;
   }
   
   .increaseButton {
@@ -32,4 +33,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px; /* Adjust as needed */
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 20px;
+    margin-top: 10px;
+    border: 1px solid  #d4d4d4;
   }

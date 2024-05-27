@@ -8,7 +8,7 @@ import FontFamilyPicker from './FontFamilyPicker.jsx'
 const TextEditor = () => {
   const [text, setText] = useState('');
   const [fontSize, setFontSize] = useState(18);
-  const [color, setColor] = useState('white');
+  const [color, setColor] = useState('black');
   const [fontFamily, setFontFamily] = useState('Arial');
   const [isBold, setIsBold] = useState('normal');
 

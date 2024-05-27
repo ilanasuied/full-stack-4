@@ -1,13 +1,15 @@
 .specialKeysContainer{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    background-color: white;
+    background-color:  white;
     padding: 0%;
-    /* margin: 50px; */
+    margin: 10px; 
+    gap: 1px;
 }
 
 .buttons{
-    background-color: white;
+    background-color:  white;
     margin: 0px;
     border-radius: 0px;
 }
