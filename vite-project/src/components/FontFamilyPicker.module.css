@@ -12,6 +12,7 @@
     border: 1px solid #ccc;
     cursor: pointer;
     text-align: left;
+    color: black;
 }
 
 .fontPickerContainer {

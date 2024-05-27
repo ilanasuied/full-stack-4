@@ -6,7 +6,7 @@ const  SpecialKeys = ({onRemovePress, onRemoveAllPress, onIncreaseFontSize, onDe
         <div className={styles.specialKeysContainer}>
 
             <button className={styles.buttons} onClick={(e)=> onBoldPress(e)} >
-                <img className={styles.buttonsImage} src="./src/image/unbold.png" alt="to upper case image"/>
+                <img className={styles.buttonsImage} src="./src/image/bold.png" alt="to upper case image"/>
             </button>
             <button className={styles.buttons} onClick={() => onUpperCase()}>
                 <img className={styles.buttonsImage} src="./src/image/uppercase-interface-button.png" alt="to upper case image" />
