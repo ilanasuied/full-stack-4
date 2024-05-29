@@ -1,7 +1,7 @@
 import styles from './SpecialKeys.module.css';
 
 
-const  SpecialKeys = ({onRemovePress, onRemoveAllPress, onIncreaseFontSize, onDecreaseFontSize, onUpperCase, onLowerCase, onBoldPress}) => {
+const  SpecialKeys = ({onUndo, onRemovePress, onRemoveAllPress, onIncreaseFontSize, onDecreaseFontSize, onUpperCase, onLowerCase, onBoldPress}) => {
     return(
         <div className={styles.specialKeysContainer}>
 
@@ -20,11 +20,11 @@ const  SpecialKeys = ({onRemovePress, onRemoveAllPress, onIncreaseFontSize, onDe
             <button className={styles.buttons} onClick={() => onIncreaseFontSize()}>
                 <img className={styles.buttonsImage} src="./src/image/increase.jpg" alt="increase font size image" />
             </button>
-            <button className={styles.buttons} onClick={() => onRemovePress()}>
-                <img className={styles.buttonsImage} src="./src/image/undo.png" alt="undo image" />
-            </button>
-            <button className={styles.buttons} onClick={() => onRemoveAllPress()}>
+            <button className={styles.buttons} onClick={() => onRemovePress()} onDoubleClick={() => onRemoveAllPress()}>
                 <img className={styles.buttonsImage} src="./src/image/trash.png" alt="remove image" />
+            </button>
+            <button className={styles.buttons} onClick={() => onUndo()}>
+                <img className={styles.buttonsImage} src="./src/image/undo.png" alt="undo image" />
             </button>
         </div>
     );

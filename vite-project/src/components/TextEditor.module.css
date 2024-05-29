@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px; /* Adjusted margin */
+  flex-wrap: wrap;
 }
 
 .textArea {
@@ -33,6 +34,7 @@
 .specialKeysAndColorPicker {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0; /* Adjusted margin */
   flex-wrap: wrap;
   background-color:  rgb(255, 255, 255); /* Dark background for buttons bar */

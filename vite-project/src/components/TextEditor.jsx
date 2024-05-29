@@ -12,51 +12,90 @@ const TextEditor = () => {
   const [color, setColor] = useState('white');
   const [fontFamily, setFontFamily] = useState('Arial');
   const [isBold, setIsBold] = useState('normal');
+  const [history, setHistory] = useState([]);
 
+  //add the current state to the history
+  const updateHistory = () => {
+    setHistory((prevHistory) => [...prevHistory,
+      {
+        text,
+        fontSize,
+        color,
+        fontFamily,
+        isBold
+      }
+    ]);
+  }
+
+  //on handle undo action
+  const handleUndo = () => {
+
+    if(history.length > 0){//if the history is not empty
+      const prevState = history[history.length - 1]; //keep the last state
+      //update all values ​​to their previous state 
+      setText(prevText => prevState.text);
+      setFontSize(prevSize => prevState.fontSize);
+      setColor(prevColor => prevState.color);
+      setFontFamily(prevFontFamily => prevState.fontFamily);
+      setIsBold(prevIsBold => prevState.isBold);
+
+      //remove the last state from the history
+      setHistory(prevHistory => prevHistory.slice(0, -1));
+    }
+  }
 
   //add char to the text
   const handleKeyPress = (key) => {
     setText(prevText => prevText + key);
+    updateHistory();
   };
 
   //remove the last char from the text
   const handleRemovePress = () => {
-    setText(prevText => prevText.substring(0, prevText.length - 1))
+    setText(prevText => prevText.substring(0, prevText.length - 1));
+    updateHistory();
   };
 
   //remove all the text
   const handleRemoveAllPress = () => {
-    setText(prevText => '')
+    setText(prevText => '');
+    updateHistory();
   };
 
   //change all the text to be in upper case
   const toUpperCase = () => {
-    setText(prevText => prevText.toUpperCase())
+    setText(prevText => prevText.toUpperCase());
+    updateHistory();
   };
 
   //change all the text to be in lower case
   const toLowerCase = () => {
-    setText(prevText => prevText.toLowerCase())
+    setText(prevText => prevText.toLowerCase());
+    updateHistory();
   }
 
   //increase the zise
   const increaseFontSize = () => {
     setFontSize(prevSize => prevSize + 2 < 100 ? prevSize + 2 : prevSize);
+    updateHistory();
   };
 
   //descease the size
   const decreaseFontSize = () => {
     setFontSize(prevSize => prevSize - 2 > 10 ? prevSize - 2 : prevSize);
+    updateHistory();
   };
 
   //change the color to be the new color
   const colorChange = (newColor) => {
-    setColor(prevColor => newColor)
+    setColor(prevColor => newColor);
+    updateHistory();
   };
 
   //change the font to be the new font family
   const handleFontChange = (fontFamilyChoosen) => {
-    setFontFamily(prevFontFamily => fontFamilyChoosen)
+    setFontFamily(prevFontFamily => fontFamilyChoosen);
+    updateHistory();
   };
 
   //bold and debold the text
@@ -72,6 +111,7 @@ const TextEditor = () => {
     } else {
       imgElement.src = './src/image/unbold.png';
     }
+    updateHistory();
   };
 
   return (
@@ -83,6 +123,7 @@ const TextEditor = () => {
         <ColorPicker onColorChoosen={colorChange} />
         <FontFamilyPicker onFontPress={handleFontChange} />
         <SpecialKeys
+          onUndo={handleUndo}
           onRemovePress={handleRemovePress}
           onRemoveAllPress={handleRemoveAllPress}
           onIncreaseFontSize={increaseFontSize}
