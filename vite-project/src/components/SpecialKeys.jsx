@@ -1,7 +1,7 @@
 import styles from './SpecialKeys.module.css';
 
 
-const  SpecialKeys = ({onUndo, onRemovePress, onRemoveAllPress, onIncreaseFontSize, onDecreaseFontSize, onUpperCase, onLowerCase, onBoldPress}) => {
+const  SpecialKeys = ({onUndo, onRemoveAllPress, onIncreaseFontSize, onDecreaseFontSize, onUpperCase, onLowerCase, onBoldPress}) => {
     return(
         <div className={styles.specialKeysContainer}>
 
@@ -20,7 +20,7 @@ const  SpecialKeys = ({onUndo, onRemovePress, onRemoveAllPress, onIncreaseFontSi
             <button className={styles.buttons} onClick={() => onIncreaseFontSize()}>
                 <img className={styles.buttonsImage} src="./src/image/increase.jpg" alt="increase font size image" />
             </button>
-            <button className={styles.buttons} onClick={() => onRemovePress()} onDoubleClick={() => onRemoveAllPress()}>
+            <button className={styles.buttons} onClick={() => onRemoveAllPress()}>
                 <img className={styles.buttonsImage} src="./src/image/trash.png" alt="remove image" />
             </button>
             <button className={styles.buttons} onClick={() => onUndo()}>

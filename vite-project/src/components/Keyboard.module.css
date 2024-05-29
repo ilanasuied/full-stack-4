@@ -49,7 +49,7 @@
   background-color: #3e3e3e; /* Darker background on click */
 }
 
-.languageButton {
+.languageButton, .deleteButton {
   margin: 5px;
   padding: 10px 15px;
   font-size: 20px;
@@ -61,17 +61,19 @@
   transition: border-color 0.3s ease, transform 0.1s ease;
 }
 
+.deleteButton:hover,
 .languageButton:hover {
   transform: scale(1.1); /* Slightly increase size on hover */
   border-color: #ff4a4a; /* Brighter red border on hover */
 }
 
+.deleteButton:active,
 .languageButton:active {
   transform: scale(1); /* Reset size on click */
   background-color: #3e3e3e; /* Darker background on click */
 }
 
-.languageImg {
+.languageImg , .deleteImg{
   height: 40px;
   padding: 0;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Keyboard.module.css';
 
-const Keyboard = ({ onKeyPress }) => {
+const Keyboard = ({ onKeyPress, onRemovePress }) => {
   const languages = {
     en: ['1234567890', 'qwertyuiop', 'asdfghjkl', 'zxcvbnm'],
     he: ['1234567890', "/'קראטוןםפ", 'שדגכעיחלךף', 'זסבהנמצתץ?'],
@@ -41,6 +41,9 @@ const Keyboard = ({ onKeyPress }) => {
         </button>
         <button className={`${styles.keyButton} ${styles.spaceButton}`} onClick={() => onKeyPress(' ')}>
           Space
+        </button>
+        <button className={styles.deleteButton} onClick={() => onRemovePress()}>
+          <img className={styles.deleteImg} src="./src/image/delete.png" alt="delete img" />
         </button>
       </div>
     </div>

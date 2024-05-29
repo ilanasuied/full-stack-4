@@ -102,15 +102,6 @@ const TextEditor = () => {
   const toggleBold = (e) => {
     //if isBold is true, changethe text to be bold
     setIsBold(prevIsBold => prevIsBold === 'bold' ? 'normal' : 'bold');
-    const imgElement = e.target.querySelector('img');
-
-    //change the image bold and unbold 
-    if (isBold === 'bold') {
-      e.target.style.backgroundColor = '#fff';
-      imgElement.src = './src/image/bold.png';
-    } else {
-      imgElement.src = './src/image/unbold.png';
-    }
     updateHistory();
   };
 
@@ -124,7 +115,6 @@ const TextEditor = () => {
         <FontFamilyPicker onFontPress={handleFontChange} />
         <SpecialKeys
           onUndo={handleUndo}
-          onRemovePress={handleRemovePress}
           onRemoveAllPress={handleRemoveAllPress}
           onIncreaseFontSize={increaseFontSize}
           onDecreaseFontSize={decreaseFontSize}
@@ -147,7 +137,9 @@ const TextEditor = () => {
         }}
       />
 
-      <Keyboard onKeyPress={handleKeyPress} />
+      <Keyboard onKeyPress={handleKeyPress} 
+                onRemovePress={handleRemovePress}
+                />
     </div>
   );
 };
